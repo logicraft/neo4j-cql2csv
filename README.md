@@ -1,12 +1,12 @@
 # neo4j-cql2csv
 
-No4jからdumpした `CQL` ファイルを `CSV` ファイルに変換するスクリプトです。
+No4jからdumpした `CQL` ファイルを `CSV` ファイルに変換するスクリプトです。
 
 ## 要件
 
 - グラフDBである [No4j](https://neo4j.com/) のバックアップ・リストアをお手伝するスクリプトです。
 - dumpされた `Cypher Query Language` を No4j のインポート用CSVに変換します。
-- Neo4jがインストールされていることを前提とします。
+- Neo4jがインストールされていることを前提とします。
 
 ## インストール
 
@@ -21,6 +21,8 @@ No4jからdumpした `CQL` ファイルを `CSV` ファイルに変換する�
 
 ## CQLファイルのdump
 
+CQLファイルを正しく解析する為に、下記の方法でdumpファイルを生成してください。
+
 ```bash
  $ neo4j-shell -c dump | sed -e "4iMATCH(n) OPTIONAL MATCH(n)-[r]-() DELETE n,r;" > /var/db/neo4j/dump.cql
 ```
@@ -33,7 +35,7 @@ No4jからdumpした `CQL` ファイルを `CSV` ファイルに変換する�
 
 *オプション*
 
-- -p　　進捗状況の表示
+- -p　　進捗状況の表示
 - -x　　デバッグモード
 - -h　　簡易ヘルプの表示
 
